@@ -7,12 +7,24 @@
     width: 100%;
     height: 100vh;
 }
-#square-div {
+
+.square-div {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     width: 100px;
     height: 100px;
-    background-color: blue;
+    background-color: black;
+    transition: background-color 0.5s;
+    border: 8px solid slategrey;
+    border-radius: 15px;
+    
+}
+
+.square-div:hover {
+    background-color: coral;
+    border: 8px solid rgb(161, 65, 0);
+
+
 }

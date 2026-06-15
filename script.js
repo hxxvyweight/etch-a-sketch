@@ -17,17 +17,9 @@ function createDiv(userInput) {
     
     for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement("div");
-        square.id = "square-div";
+        square.classList.add("square-div");
         square.textContent = "Im a square";
         
-        //Hover effect
-        square.addEventListener("mouseenter", () => {
-
-        })
-        
-        square.addEventListener("mouseleave", () => {
-
-        })
 
         container.appendChild(square);
     }
