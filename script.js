@@ -3,8 +3,16 @@
 //Uses Flexbox to handle grid; Grid will have hover effect
 
 
+const container = document.createElement("div");
+
+
 //Creates a resisable NxN grid with dimension specified by input
 function createDiv(num) {
+
+    for (let i = 0; i < num; i++) {
+        const square = document.createElement("div");
+        square.id = "square-div";
+    }
 
 
 
