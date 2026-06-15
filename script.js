@@ -48,6 +48,11 @@ function userInteraction() {
             return;
         }
 
+        if (input > 100) {
+            alert("Number Cap Reached. Only integers < 100 are allowed.")
+            continue;
+        }
+
         if ( isNaN(input) || input.trim() === "" || Number(input) < 0 ) {
 
             alert( "Invalid input, please enter a positive number!" );
