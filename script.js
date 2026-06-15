@@ -30,12 +30,11 @@ function createDiv(userInput) {
     
     const totalSquares = userInput * userInput; 
     
-    //Create NxN Grid generation based on user input
+    //Create NumxNum Grid generation based on user input
     
     for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement("div");
         square.classList.add("square-div");
-        square.textContent = "Im a square";
         
 
         container.appendChild(square);
