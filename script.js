@@ -1,11 +1,28 @@
 //Goal is to create a webpage with a 16x16 grid of square divs
 //Only Using JavaScript
 //Uses Flexbox to handle grid; Grid will have hover effect
+const subContainer = document.createElement("div");
+subContainer.id = "subContainer";
+document.body.append(subContainer);
 
+const btn = document.createElement("button");
+btn.textContent = "New Grid";
+btn.id = "newGrid-btn";
 
 const container = document.createElement("div");
 container.id = "container";
 document.body.append(container);
+container.style.marginTop = "24px";
+
+
+
+btn.addEventListener("click", () => {
+
+    container.replaceChildren();
+    createDiv(userInteraction());
+})
+
+subContainer.appendChild(btn);
 
 
 //Creates a resisable NxN grid with dimension specified by input
@@ -41,6 +58,7 @@ function userInteraction() {
     //Handles Unknown Values/Invalid Input
     while (true) {
 
+
         const input = prompt("Please Type a Number: ");
 
         if ( input === null ) {
@@ -48,7 +66,7 @@ function userInteraction() {
             return;
         }
 
-        if (input > 100) {
+        if (input >= 100) {
             alert("Number Cap Reached. Only integers < 100 are allowed.")
             continue;
         }
