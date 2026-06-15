@@ -4,18 +4,30 @@
 
 
 const container = document.createElement("div");
+container.id = "container";
 document.body.append(container);
 
 
 //Creates a resisable NxN grid with dimension specified by input
 function createDiv(userInput) {
     
-    //Create NxN Grid generation based on user input
-    const totalSquare = userInput * userInput;
+    const totalSquares = userInput * userInput; 
     
-    for (let i = 0; i < userInput; i++) {
+    //Create NxN Grid generation based on user input
+    
+    for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement("div");
         square.id = "square-div";
+        square.textContent = "Im a square";
+        
+        //Hover effect
+        square.addEventListener("mouseenter", () => {
+
+        })
+        
+        square.addEventListener("mouseleave", () => {
+
+        })
 
         container.appendChild(square);
     }
@@ -34,24 +46,28 @@ function clearDiv(clearCondition) {
 //Handles user interaction.
 function userInteraction() {
     
+    //Handles Unknown Values/Invalid Input
     while (true) {
 
         const input = prompt("Please Type a Number: ");
 
-        if (input === null) {
+        if ( input === null ) {
             alert("Action Cancelled by User");
             return;
         }
 
         if ( isNaN(input) || input.trim() === "" || Number(input) < 0 ) {
 
-            alert("Invalid input, please enter a positive number!");
+            alert( "Invalid input, please enter a positive number!" );
             continue;
 
         }
-
+        
+        //
         const validNumber = Number(input);
+        return validNumber;
         console.log("Success! Your number is:", validNumber);
+        console.log("Generating...");
 
         break;
     
@@ -64,4 +80,6 @@ function userInteraction() {
 
     }
 
+//Execution
+createDiv(userInteraction());
 
